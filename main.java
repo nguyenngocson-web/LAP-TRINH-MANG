@@ -1,4 +1,4 @@
-package BT2;
+package BT4;
 
 import java.util.Scanner;
 
@@ -6,22 +6,24 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//khởi tạo một object hcn thuộc class HinhChuNhat để sử dụng các thuộc tính trong class này
-        HinhChuNhat hcn = new HinhChuNhat();
+		double a, b, c, x1, x2, delta;
+        String ketQua = "";
         Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.print("Nhập a (a # 0): ");
+            a = scanner.nextDouble();
+        } while (a == 0);
+        System.out.print("Nhập b: ");
+        b = scanner.nextDouble();
+        System.out.print("Nhập c: ");
+        c = scanner.nextDouble();
+        System.out.println("Phương trình bậc hai bạn vừa nhập có dạng: "+a+"x^2 + "+b+"x + "+c+" = 0");
+        // tính delta = b * b - 4 * a * c;
+        delta = Math.pow(b, 2) - 4 * a * c;
+        double candel = Math.sqrt(delta);
         
-        //yêu cầu người dùng nhập vào chiều dài và chiều rộng
-        System.out.println("nhập vào chiều dài : ");
-        hcn.setDai(scanner.nextDouble());
-        System.out.println("nhập vào chiều rộng : ");
-        hcn.setRong(scanner.nextDouble());
+        System.out.ptintln("Căn delta là : %f",  candel);
         
-        //gọi hàm tính chu vi và diện tích ở class HinhChuNhat bằng cách sử dụng object vừa mới được tạo là hcn
-        System.out.println("chu vi hình chữ nhật là : " + hcn.tinhChuVi());
-        System.out.println("diện tích hình chữ nhật là : " + hcn.tinhDienTich());
-        
-        
-    }
+	}
 
 }
